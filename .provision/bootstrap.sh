@@ -23,7 +23,12 @@ sudo debconf-set-selections <<< 'mysql-server mysql-server/root_password root'
 sudo debconf-set-selections <<< 'mysql-server mysql-server/root_password_again root'
 # Do not forget libapache2-mod-php5 - can be very annoying dealing with apache without it. 
 sudo apt-get -y install git apache2 mysql-server libapache2-mod-auth-mysql php5 php5-cli php5-mysql libapache2-mod-php5 php5-mcrypt php5-gd
+
+# Run the secure installation script for mySQL. Take defaults.
 sudo /usr/bin/mysql_secure_installation --use-default
+
+# Create testDB for DKAN to connect to.
+mysql -u root -p"root" -e "CREATE DATABASE DKAN_TEST;"
 
 ## Install and verify Python version.
 # sudo apt-get -y install python3 python3-pip
