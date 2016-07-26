@@ -3,7 +3,7 @@
 
 # nginx
 sudo apt-get update
-sudo apt-get install php5 php5-cli php5-fpm
+sudo apt-get -y install php5 php5-cli php5-fpm
 sudo apt-get -y install zip unzip git nginx
 sudo service nginx start
 
@@ -14,7 +14,6 @@ sudo ln -s /etc/nginx/sites-available/site.conf /etc/nginx/sites-enabled/site.co
 sudo service nginx restart
 
 export DEBIAN_FRONTEND=noninteractive
-sudo apt-get update
 # sudo apt-get -y install passwdqc
 # MSPW=$(pwqgen)
 # For dev purposes, doesn't really matter what the mysql root password is. This (hopefully) establishes
