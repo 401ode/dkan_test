@@ -21,7 +21,7 @@ export DEBIAN_FRONTEND=noninteractive
 echo "mysql-server mysql-server/root_password password root" | sudo debconf-set-selections
 echo "mysql-server mysql-server/root_password_again password root" | sudo debconf-set-selections
 
-# Do not forget libapache2-mod-php5 - can be very annoying dealing with apache without it. 
+
 sudo apt-get -y install mysql-server
 sudo apt-get -y install php5-mysql php5-mcrypt php5-gd 
 
@@ -40,10 +40,8 @@ mysql -u root -p"root" -e "CREATE DATABASE DKAN_TEST;"
 
 # clean /var/www
 sudo rm -Rf /var/www
-# Make new www dir.
-sudo mkdir /var/www/
 # symlink /var/www => /vagrant
-sudo ln -s /home/vagrant/dkan/ /var/www/
+sudo ln -s /home/vagrant/dkan/ /var/www
 
 # Restart PHP Services before drush. 
 sudo service php5-fpm restart
@@ -64,7 +62,7 @@ sudo mv /tmp/drush /usr/local/bin
 
 
 # Optional. Enrich the bash startup file with completion and aliases.
-sudo drush init
+sudo drush init --add-path
 
 # # Install DKAN, finally. 
 # git clone --branch 7.x-1.x https://github.com/NuCivic/dkan.git
@@ -78,5 +76,7 @@ cd dkan
 unzip master.zip
 
 # Install dkan verbose. 
-sudo drush -y site-install dkan --db-url="mysql://root:root@localhost/DKAN_TEST" --verbose
+sudo drush -y site-install dkan --account-name=admin --account-pass=admin --db-url="mysql://root:root@localhost/DKAN_TEST" --verbose
+# Set default admin password.
+drush upwd admin --password=admin
 sudo service nginx restart

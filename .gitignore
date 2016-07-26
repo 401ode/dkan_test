@@ -1,1 +1,6 @@
 .vagrant
+dkan
+.drush
+.cache
+.bash_history
+.mysql_history
