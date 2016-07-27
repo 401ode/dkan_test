@@ -1,6 +1,6 @@
 # DKAN Build Instructions
 
-[DKAN](http://demo.getdkan.com/) is the Drupal-specific version of CKAN, an open source data portal and data management system. While it is possible to follow the standard instructions for [Installing DKAN](http://docs.getdkan.com/dkan-documentation/dkan-developers-guide/installing-dkan), they have a number of dependencies, ranging from Drush to MySQL and Apache. Instead, we recommend building DKAN with [Vagrant](https://www.vagrantup.com/), a portable development environment manager based on [VirtualBox](https://www.virtualbox.org/). Code courtesy of [Brian McGuirk](https://github.com/bmcguirk).
+[DKAN](http://demo.getdkan.com/) is the Drupal-specific version of CKAN, an open source data portal and data management system. While it is possible to follow the standard instructions for [Installing DKAN](http://docs.getdkan.com/dkan-documentation/dkan-developers-guide/installing-dkan), they have a number of dependencies, ranging from Drush to MySQL and Apache. Instead, we recommend building DKAN with [Vagrant](https://www.vagrantup.com/), a portable development environment manager based on [VirtualBox](https://www.virtualbox.org/), and served up by [nginx](https://www.nginx.com) for speed and ease of configuration. Code courtesy of [Brian McGuirk](https://github.com/bmcguirk).
 
 [![DKAN](https://www.drupal.org/files/2016-02-05_12-09-49.png)](http://nucivic.com/dkan)
 
@@ -34,6 +34,10 @@ If you don't have [nano](https://www.nano-editor.org/), open the hosts file with
     192.168.68.15  dkan-test.local.com
 
 Now, you can test out the site by visiting dkan-test.local.com in the browser of your choice. You should see a website that looks something like the above image. To login to the admin panel of the site, click the "Log in" button and input "admin" for both the user and password, as defined in the bootstrap.sh file. For this and other reasons, system hardening will be required before this vagrant image can be pushed to a production server.
+
+## Local Site Domain Name
+
+Should you want to have your sitename be something different (my.dkan.isthebest.com), you should modify the [nginx.conf](https://github.com/Designist/DKAN_Vagrant/blob/master/.provision/nginx/nginx.conf) to reflect the servername, as well as the hosts file as described just above.
 
 When you're done working with the site, again navigate to the base directory and run the following command:
 
