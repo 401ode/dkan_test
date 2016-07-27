@@ -39,4 +39,4 @@ When you're done working with the site, again navigate to the base directory and
 
     $ vagrant suspend
     
-To resume work on the site, simply run `vagrant up` again.
+This will make sure that work isn't lost when the computer is turned off or restarted. To resume work on the site, simply run `vagrant up` again.
