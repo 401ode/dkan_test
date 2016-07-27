@@ -16,7 +16,7 @@ Now that you've got VirtualBox and Vagrant installed, download or clone the curr
 
 Inside the base directory, run
 
-   $ vagrant up
+    $ vagrant up
 
 Now DKAN will be installed per the instructions in bootstrap.sh. This should create a .vagrant folder in which the ubuntu/trusty64 machine will be stored; meanwhile, Drupal/DKAN files will be stored in the newly created dkan directory. If any major errors arise at this point, you can always run `vagrant destroy` to remove the virtual machine and start over. See the [Getting Started](https://www.vagrantup.com/docs/getting-started/up.html) for more commands with Vagrant.
 
@@ -24,12 +24,12 @@ Now DKAN will be installed per the instructions in bootstrap.sh. This should cre
 
 Finally, we need to define the host so that we can see the site at dkan-test.local.com. To do so, edit the /etc/hosts file to include the IP listed in the Vagrantfile:
 
-   $ cd /etc/
-   $ sudo nano hosts
+    $ cd /etc/
+    $ sudo nano hosts
 
 If you don't have [nano](https://www.nano-editor.org/), open the hosts file with the editor of your choice. Just make sure to do so with admin priviledges. Then add the following line
 
-   192.168.68.15  dkan-test.local.com
+    192.168.68.15  dkan-test.local.com
 
 Now, you can test out the site by visiting dkan-test.local.com in the browser of your choice. You should see a website that looks something like the below image:
 [![DKAN](https://www.drupal.org/files/2016-02-05_12-09-49.png)](http://nucivic.com/dkan)
