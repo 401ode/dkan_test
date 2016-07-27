@@ -33,4 +33,10 @@ If you don't have [nano](https://www.nano-editor.org/), open the hosts file with
 
     192.168.68.15  dkan-test.local.com
 
-Now, you can test out the site by visiting dkan-test.local.com in the browser of your choice. You should see a website that looks something like the above image. To login to the admin panel of the site, click the "Log in" button and input "admin" for both the user and password, as defined in the bootstrap.sh file. For this and other reasons, system hardening will be required before this vagrant image can be pushed to a production server. 
+Now, you can test out the site by visiting dkan-test.local.com in the browser of your choice. You should see a website that looks something like the above image. To login to the admin panel of the site, click the "Log in" button and input "admin" for both the user and password, as defined in the bootstrap.sh file. For this and other reasons, system hardening will be required before this vagrant image can be pushed to a production server.
+
+When you're done working with the site, again navigate to the base directory and run the following command:
+
+    $ vagrant suspend
+    
+To resume work on the site, simply run `vagrant up` again.
