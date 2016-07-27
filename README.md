@@ -1,6 +1,6 @@
 # DKAN Build Instructions
 
-[DKAN](http://demo.getdkan.com/) is the Drupal-specific version of CKAN, an open source data portal and data management system. While it is possible to follow the standard instructions for [Installing DKAN](http://docs.getdkan.com/dkan-documentation/dkan-developers-guide/installing-dkan), they have a number of dependencies, ranging from Drush to MySQL and Apache. Instead, we recommend building DKAN with [Vagrant](https://www.vagrantup.com/), a portable development environment manager based on [VirtualBox](https://www.virtualbox.org/).
+[DKAN](http://demo.getdkan.com/) is the Drupal-specific version of CKAN, an open source data portal and data management system. While it is possible to follow the standard instructions for [Installing DKAN](http://docs.getdkan.com/dkan-documentation/dkan-developers-guide/installing-dkan), they have a number of dependencies, ranging from Drush to MySQL and Apache. Instead, we recommend building DKAN with [Vagrant](https://www.vagrantup.com/), a portable development environment manager based on [VirtualBox](https://www.virtualbox.org/). Code courtesy of [Brian McGuirk](https://github.com/bmcguirk).
 
 [![DKAN](https://www.drupal.org/files/2016-02-05_12-09-49.png)](http://nucivic.com/dkan)
 
